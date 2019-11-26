@@ -1,0 +1,44 @@
+<div class="row">
+
+  <div class="col-md-4">
+
+<%= image_tag @book.image.url(:medium), class: "book-show" %>
+
+</div>
+</div>
+
+<p id="notice"><%= notice %></p>
+<div>
+
+<p>
+  <strong>Title:</strong>
+  <%= @book.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @book.description %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @book.author %>
+</p>
+
+<div class="row">
+
+  <div class="col-md-4">
+    <%= render '/reviews/review' %>
+
+  </div>
+</div>
+
+<% if user_signed_in? %>
+<% if @book.user_id == current_user.id %>
+
+<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'Back', books_path %>
+<%= link_to "Add Review", new_book_review_path(@book) %>
+
+<% end %>
+<% end %>

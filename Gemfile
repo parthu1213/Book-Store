@@ -1,8 +1,13 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
-
+gem 'devise-bootstrap-views', '~> 1.0'
+gem 'ratyrate'
 ruby '2.6.3'
-
+gem 'devise'
+gem 'paperclip'
+gem 'aws-sdk'
+gem 'bootstrap'
+gem 'jquery-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.1'
 # Use sqlite3 as the database for Active Record
