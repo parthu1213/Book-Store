@@ -1,49 +1,33 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+    <div id="products" class="row view-group">
 
-<h1>Books</h1>
-
-<h2 class="current-category"><%= params[:category] %></h2>
-
-
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Author</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-
-    <div class="row">
-
-    <% @books.each do |book| %>
-
-    <div class="col-md-3">
-    <a href="/books/<%= book.id %>">
-
-    </a>
+      <% @books.each do |book| %>
+        <div class="item col-xs-4 col-lg-4">
+            <div class="thumbnail card">
+                <div class="img-event">
+                    <img class="group list-group-image img-fluid" src="<%= book.image.url(:medium) %>" alt="" />
+                </div>
+                <div class="caption card-body">
+                    <h4 class="group card-title inner list-group-item-heading">
+                        <%= book.title %></h4>
+                    <p class="group inner list-group-item-text">
+                          <%= book.description %></p>
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            <p class="lead">
+                                <%= book.author %></p>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                          <td><%= link_to 'Show', book %></td>
+                          <td><%= link_to 'Edit', edit_book_path(book) %></td>
+                          <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% end %>
     </div>
-      <tr>
-        <td><%= book.title %></td>
-        <td><%= book.description %></td>
-        <td><%= book.author %></td>
-        <td><%= image_tag book.image.url(:medium), class:"book" %></td>
-        <%= link_to 'New Book', new_book_path %>
-
-        <td><%= link_to 'Show', book %></td>
-        <td><%= link_to 'Edit', edit_book_path(book) %></td>
-        <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-      </div>
-    <% end %>
-
-  </tbody>
-</table>
-
-<br>
-
+</div>
+<div class="mb-5" >.</div>
 <%= link_to 'New Book', new_book_path %>
