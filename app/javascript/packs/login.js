@@ -7,8 +7,7 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-require("packs/agency")
-require("packs/contact_me")
+
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
