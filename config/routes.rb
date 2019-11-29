@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   resources :categories
-  resources :reviews 
+  resources :reviews
   get 'home/index'
   devise_for :users
   resources :books do
