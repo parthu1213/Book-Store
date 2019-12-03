@@ -1,19 +1,19 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
+      <!-- <th scope="col">#</th>
       <th scope="col">Ratting</th>
-      <th scope="col">Comment</th>
+      <th scope="col">Comment</th> -->
       <!-- <th> Action </th> -->
     </tr>
   </thead>
   <tbody>
     <% @book.reviews.each_with_index do |review, index| %>
-      <% index = index + 1 %>
-      <tr>
-        <th scope="row"><%= index %></th>
-        <td><%= review.rating %></td>
-        <td><%= review.comment %></td>
+      <%# <% index = index + 1 %>
+      <tr> 
+        <!-- <th scope="row"><%= index %></th> -->
+        <!-- <td><%= review.rating %></td> -->
+        <!-- <td><%= review.comment %></td> -->
       <% end %>
 
   </tbody>
