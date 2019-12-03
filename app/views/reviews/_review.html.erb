@@ -1,10 +1,10 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">Book</th>
+      <th scope="col">#</th>
       <th scope="col">Ratting</th>
       <th scope="col">Comment</th>
-      <th> Action </th>
+      <!-- <th> Action </th> -->
     </tr>
   </thead>
   <tbody>
@@ -14,10 +14,6 @@
         <th scope="row"><%= index %></th>
         <td><%= review.rating %></td>
         <td><%= review.comment %></td>
-        <td><%= link_to 'Edit', edit_review_path(review) %> </td>
-
-
-
       <% end %>
 
   </tbody>
