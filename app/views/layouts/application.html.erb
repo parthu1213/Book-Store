@@ -26,13 +26,13 @@
   <body>
 
      <%= render 'layouts/navbar' %>
-
+     
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
      <div class="container"
-    <%= yield %>
+      <%= yield %>
      </div>
+     <%= render 'layouts/footer' %>
   </body>
 </html>
-<%= link_to 'New Book', new_book_path %>
