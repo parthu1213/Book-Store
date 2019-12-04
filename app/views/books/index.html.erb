@@ -3,6 +3,7 @@
 
       <% @books.each do |book| %>
         <div class="item col-xs-4 col-lg-4">
+          <a href="<%= book_path(book) %>">
             <div class="thumbnail card">
                 <div class="img-event">
                     <img class="group list-group-image img-fluid" src="<%= book.image.url(:medium) %>" alt="" />
@@ -17,10 +18,11 @@
                             <p class="lead">
                                 <%= book.author %></p>
                         </div>
-                      
+
                     </div>
                 </div>
             </div>
+          </a>
         </div>
         <% end %>
     </div>
