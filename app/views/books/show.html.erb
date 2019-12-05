@@ -1,7 +1,7 @@
 <div class="container-fluid mt-5">
   <div class="row mt-5 border">
     <div class="col-sm-5">
-      <%= image_tag @book.image.url(:medium), class: "book-show my-4" %>
+      <%= image_tag @book.try(:img), class: "book-show my-4" %>
     </div>
     <div class="col-sm-7">
       <p class="mt-4">

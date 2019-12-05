@@ -1,12 +1,12 @@
 ActiveAdmin.register Book do
-  permit_params :title, :description, :image, :author
+  permit_params :title, :description, :img, :author
 
   index do
       selectable_column
       id_column
       column :title
       column :description
-      column :image
+      column :img
       column :author
       actions
     end
@@ -18,7 +18,7 @@ ActiveAdmin.register Book do
       f.input :title
       f.input :description, type: "Text"
       f.input :author
-      f.input :image, :as => :file #, :hint => f.template.image_tag(f.object.image.url(:medium)
+      f.input :img, :as => :file #, :hint => f.template.img_tag(f.object.img.url(:medium)
     end
     f.actions
   end
@@ -29,8 +29,8 @@ ActiveAdmin.register Book do
         row :title
         row :description
         row :author
-        row :image do
-          image_tag(book.try(:image).try(:url))
+        row :img do
+          image_tag(book.try(:img))
         end
         row :created_at
         row :updated_at

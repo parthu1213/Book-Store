@@ -1,4 +1,4 @@
-Rails.application.configure do
+uRails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
@@ -109,7 +109,7 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
-  
+
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
   if ENV["RAILS_LOG_TO_STDOUT"].present?
