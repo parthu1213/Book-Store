@@ -6,7 +6,7 @@
           <a href="<%= book_path(book) %>">
             <div class="thumbnail card">
                 <div class="img-event">
-                    <img class="group list-group-img img-fluid" src="<%= book.try(:img) %>" alt="" />
+                  <%= image_tag url_for(book.try(:img)), class: "group list-group-img img-fluid" %>
                 </div>
                 <div class="caption card-body">
                     <h4 class="group card-title inner list-group-item-heading">
