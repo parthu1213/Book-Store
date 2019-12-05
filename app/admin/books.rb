@@ -30,7 +30,9 @@ ActiveAdmin.register Book do
         row :description
         row :author
         row :img do
-          image_tag url_for(book.try(:img))
+          if book.img.present?
+            image_tag(book.try(:img))
+          end
         end
         row :created_at
         row :updated_at
