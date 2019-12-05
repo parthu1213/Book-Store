@@ -11,6 +11,7 @@ module BookReview
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 6.0
+    config.assets.initialize_on_precompile = false
     config.to_prepare do
         Devise::SessionsController.layout "login"
         # Devise::RegistrationsController.layout "your_layout_name"

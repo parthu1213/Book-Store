@@ -129,6 +129,6 @@ test:
 #
 production:
   <<: *default
-  database: book
+  database: book_development
   username: softices
   password: 123456
