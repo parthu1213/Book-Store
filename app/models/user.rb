@@ -9,6 +9,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable,
          :registerable, :confirmable
 
+
   # protected
   #   def confirmation_required?
   #     false
