@@ -118,4 +118,17 @@
     config.logger = ActiveSupport::TaggedLogging.new(logger)
 end
 
+config.action_mailer.perform_deliveries = true
+config.action_mailer.raise_delivery_errors = true
+config.action_mailer.default_url_options = { host: 'softices-books.herokuapp.com', from: 'admin@onlinebooks.com' }
+config.action_mailer.delivery_method = :smtp
+config.action_mailer.smtp_settings = {
+  user_name:      'parthu31',
+  password:       '31pruthvi',
+  domain:         'softices-books.herokuapp.com',
+  address:       'smtp.sendgrid.net',
+  port:          '587',
+  authentication: :plain,
+  enable_starttls_auto: true
+}
 end
