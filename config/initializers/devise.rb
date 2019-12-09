@@ -4,7 +4,7 @@
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
   config.reconfirmable = false
-  config.allow_unconfirmed_access_for = 1.days
+  # config.allow_unconfirmed_access_for = 1.days
   config.scoped_views = true
   # random tokens. Changing this key will render invalid all existing
   # The secret key used by Devise. Devise uses this key to generate
