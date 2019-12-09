@@ -1,0 +1,25 @@
+%nav#mainNav.navbar.navbar-expand-lg.navbar-dark.fixed-top
+  .container
+    %button.navbar-toggler.navbar-toggler-right{"aria-controls" => "navbarResponsive", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarResponsive", "data-toggle" => "collapse", :type => "button"}
+      Menu
+      %i.fas.fa-bars
+    #navbarResponsive.collapse.navbar-collapse
+      %ul.navbar-nav.text-uppercase.ml-auto
+        %li.nav-item
+          %a.nav-link.js-scroll-trigger{:href => root_path} Home
+        %li.nav-item
+          %a.nav-link.js-scroll-trigger{:href => "/books"} Books
+        - if user_signed_in?
+          %li.nav-item
+            %a.nav-link{"data-method" => "delete", :href => "/users/sign_out", :rel => "nofollow"} Logout
+        - else
+          %li.nav-item
+            %a.nav-link{:href => "/users/sign_in"} Login
+          %li.nav-item
+            %a.nav-link{:href => "/users/sign_up"} Signup
+- if controller_name == "home"
+  %header.masthead
+    .container
+      .intro-text
+        .intro-lead-in Welcome To Our Book Store!
+        .intro-heading.text-uppercase It's Nice To Meet You

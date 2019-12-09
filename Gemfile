@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 gem 'devise-bootstrap-views', '~> 1.0'
+gem 'haml'
 ruby '2.6.3'
 gem 'devise'
 gem 'activeadmin'
