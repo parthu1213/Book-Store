@@ -1,0 +1,10 @@
+= form_with model: @review, class: "nifty_form" do |f|
+  %input{:name => "book_id", :type => "hidden", :value => "#{params[:book_id]}"}/
+  .field
+    = f.label :Rating
+    = f.text_field :rating,  class: "form-control form-control-lg"
+  .field
+    = f.label :comment
+    = f.text_field :comment, class: "form-control form-control-lg"
+  .field
+    = f.submit 'Submit', :class => 'class="btn btn-primary mb-2"'

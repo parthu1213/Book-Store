@@ -1,0 +1,14 @@
+%table.table
+  %thead
+    %tr
+      /
+        <th scope="col">#</th>
+        <th scope="col">Ratting</th>
+        <th scope="col">Comment</th>
+      / <th> Action </th>
+  %tbody
+    - @book.reviews.each_with_index do |review, index|
+      %tr
+        / <th scope="row"><haml_loud> index </haml_loud></th>
+        / <td><haml_loud> review.rating </haml_loud></td>
+        / <td><haml_loud> review.comment </haml_loud></td>

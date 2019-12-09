@@ -1,0 +1,18 @@
+.container-fluid.mt-5
+  .row.mt-5.border
+    .col-sm-5
+      = image_tag url_for(@book.try(:img)), class: "book-show my-4"
+    .col-sm-7
+      %p.mt-4
+        %strong Title:
+        = @book.title
+      %p.mt-4
+        %strong Description:
+        = @book.description
+      %p.mt-4
+        %strong Author:
+        = @book.author
+      %p.mt-4
+      .row
+        .col-md-4
+          = render '/reviews/review'
