@@ -1,17 +1,13 @@
 Rails.application.routes.draw do
-  devise_for :users, path: 'users', controllers: {
-    sessions: 'users/sessions',
-    registrations: 'users/registrations',
-    confirmations: 'users/confirmations',
-    passwords: 'users/passwords'
-  }
-  devise_for :admin_users, ActiveAdmin::Devise.config
 
-  # , path_names: {
-  #   sign_in: 'login',
-  #   sign_up: 'joinus',
-  #   sign_out: 'logout'
-  # }
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self) rescue ActiveAdmin::DatabaseHitDuringLoad
+  devise_for :users, controllers: {
+                      sessions:      'users/sessions',
+                      registrations: 'users/registrations',
+                      passwords:     'users/passwords'
+                    }
+
   resources :books, only: [:show, :index]
   resources :categories
   resources :reviews
