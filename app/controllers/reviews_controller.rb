@@ -54,7 +54,7 @@ class ReviewsController < ApplicationController
   end
 
   def find_book
-    #
+    puts"-------l---#param---#{params.inspect}------"
     @book = Book.find(params[:book_id].to_i)
   end
 
