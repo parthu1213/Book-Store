@@ -1,6 +1,5 @@
 ActiveAdmin.register Book do
-  permit_params :title, :description, :img, :author, :price
-
+  permit_params :title, :description, :img, :author,
 
   index do
       selectable_column
@@ -11,6 +10,8 @@ ActiveAdmin.register Book do
       column :author
       actions
     end
+    
+
 
   filter :author
 

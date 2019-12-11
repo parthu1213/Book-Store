@@ -2,6 +2,7 @@ class User < ApplicationRecord
   # after_create :send_admin_mail
   has_many :books
   has_many :reviews
+  has_many :orders
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
