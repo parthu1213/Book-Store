@@ -1,5 +1,6 @@
 ActiveAdmin.register Book do
-  permit_params :title, :description, :img, :author
+  permit_params :title, :description, :img, :author, :price
+
 
   index do
       selectable_column
@@ -18,7 +19,8 @@ ActiveAdmin.register Book do
       f.input :title
       f.input :description, type: "Text"
       f.input :author
-      f.input :img, :as => :file #, :hint => f.template.img_tag(f.object.img.url(:medium)
+      f.input :img, :as => :file
+      f.input :price
     end
     f.actions
   end
@@ -29,6 +31,7 @@ ActiveAdmin.register Book do
         row :title
         row :description
         row :author
+        row :price
         row :img do
           if book.img.present?
             image_tag(book.try(:img))
