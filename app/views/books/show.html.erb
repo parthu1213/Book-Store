@@ -26,6 +26,7 @@
         <strong>Order:</strong>
         <%= @book.orders %>
       </p> -->
+      <%= link_to 'Order', new_order_path(book: @book.id) %> 
 
 
       <p class="mt-4"></p>

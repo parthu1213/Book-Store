@@ -29,9 +29,9 @@ end
     @categories = Category.all.map{ |c| [c.name, c.id]}
   end
 
-  # def order
-  #   @book = Book.find(params[:book_id])
-  #   @books = Bookt.find(params[:books][:book_id])
+  def order
+    @book = Book.find(params[:book_id])
+    @books = Bookt.find(params[:books][:book_id])
 
   end
 
@@ -85,4 +85,4 @@ end
     def book_params
       params.require(:book).permit(:title, :description, :author, :category_id, :img)
     end
-# end
+ end

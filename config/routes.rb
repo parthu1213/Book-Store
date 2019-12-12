@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :books, only: [:show, :index]
   resources :categories
   resources :reviews
+  resources :orders
   get 'home/index'
   # devise_for :users
   resources :books do
