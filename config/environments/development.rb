@@ -59,17 +59,21 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   # Use an evented file watcher to asynchronously detect changes in source code,
+  # config.action_mailer.default :charset => "utf-8"
+  config.require_master_key = true
+
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default_url_options = { host: 'localhost:3000', from: 'admin@onlinebooks.com' }
-  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.delivery_method = :smtp 
+  config.action_mailer.delivery_method = :test
   config.action_mailer.smtp_settings = {
-    user_name:      'parthu31',
-    password:       '31pruthvi',
-    domain:         'softices-books.herokuapp.com',
-    address:       'smtp.sendgrid.net',
+    user_name:      'kc1464534@gmail.com',
+    password:       'kc@12345',
+    domain:         'gmail.com',
+    address:       'smtp.gmail.com',
     port:          '587',
-    authentication: :plain,
+    authentication: 'plain',
     enable_starttls_auto: true
   }
 end

@@ -16,7 +16,7 @@
 
   # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]
   # or in config/master.key. This key is used to decrypt credentials (and other encrypted files).
-  # config.require_master_key = true
+   config.require_master_key = true
 
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
@@ -117,18 +117,19 @@
     logger.formatter = config.log_formatter
     config.logger = ActiveSupport::TaggedLogging.new(logger)
 end
-
+# config.action_mailer.default :charset => "utf-8"
 config.action_mailer.perform_deliveries = true
 config.action_mailer.raise_delivery_errors = true
 config.action_mailer.default_url_options = { host: 'softices-books.herokuapp.com', from: 'admin@onlinebooks.com' }
 config.action_mailer.delivery_method = :smtp
+config.action_mailer.delivery_method = :test
 config.action_mailer.smtp_settings = {
-  user_name:      'parthu31',
-  password:       '31pruthvi',
-  domain:         'softices-books.herokuapp.com',
-  address:       'smtp.sendgrid.net',
+  user_name:      'kc1464534@gmail.com',
+  password:       'kc@12345',
+  domain:         'gmail.com',
+  address:       'smtp.gmail.com',
   port:          '587',
-  authentication: :plain,
+  authentication: 'plain',
   enable_starttls_auto: true
 }
 end

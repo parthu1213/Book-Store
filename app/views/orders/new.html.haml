@@ -1,14 +1,15 @@
 -# = render 'form'
-= form_with model: @order, class: "nifty_form" do |f|
-  %input{:name => "book_id", :type => "hidden", :value => "#{params[:book_id]}"}/
+= form_with(url: orders_path, method: "post") do |f|
+
+  %input{:type => "hidden", :value => "#{params[:book_id]}", name: "order[book_id]"}
   .field
     = f.label :name
-    = f.text_field :name,  class: "form-control form-control-lg"
+    = f.text_field :name,  class: "form-control form-control-lg", name: "order[name]"
   .field
     = f.label :address
-    = f.text_field :address, class: "form-control form-control-lg"
+    = f.text_field :address, class: "form-control form-control-lg", name: "order[address]"
   .field
     = f.label :mobilenumber
-    = f.text_field :integer, class: "form-control form-control-lg"
+    = f.text_field :mobilenumber, class: "form-control form-control-lg", name: "order[mobilenumber]"
   .field
     = f.submit 'Submit', :class => 'class="btn btn-primary mb-2"'

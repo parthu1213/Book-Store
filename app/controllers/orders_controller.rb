@@ -4,12 +4,7 @@ class OrdersController < ApplicationController
     @orders = Order.all
   end
 
-  def show
-    @book = Book.new
-  end
-
   def new
-    if params[:book_id].present?
     @order  = Order.new
   end
 
@@ -18,22 +13,20 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @order = Order.new(book_params)
-    @order.book_id = @book.id
-    @order.user_id = current_user.id
-      if @order.save
-        redirect_to order_path(@order)
-      else
-        render 'new'
-      end
+    @order = Order.new(order_params)
+    if @order.save
+      redirect_to orders_path
+    else
+      render 'new'
     end
   end
 
   def update
-    if @order.upate(book_params)
-      redirect_to order_path(@book)
-    else
-      render 'edit'
-    end
+  end
+
+  private
+
+  def order_params
+    params.require(:order).permit(:name, :address, :mobilenumber, :book_id, :user_id)
   end
 end
