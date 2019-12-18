@@ -20,4 +20,10 @@ class User < ApplicationRecord
  #   UserMailer.send_new_user_message(self).deliver
  # end
 
+ def purchased_books
+   b = Order.where(user_id: self.id)
+   c = b.present? ? b.count : 0
+   return c
+ end
+
 end

@@ -5,7 +5,9 @@ ActiveAdmin.register User do
     selectable_column
     id_column
     column :email
-    column :current_sign_in_at
+    column 'Books', sortable: :books_count do |b|
+      b.purchased_books
+    end
     column :sign_in_count
     column :created_at
     actions
@@ -23,6 +25,11 @@ ActiveAdmin.register User do
       f.input :password_confirmation
     end
     f.actions
+  end
+
+  def book_count
+    abort
+    current_user.books.count
   end
 
 end
