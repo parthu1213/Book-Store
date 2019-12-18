@@ -9,15 +9,16 @@ class OrdersController < ApplicationController
   end
 
   def edit
-    @books = Book.all.map { |b|  [b.name, b.id] }
+    @orders = Order.all.map { |o|  [o.name, o.id] }
   end
 
   def create
     @order = Order.new(order_params)
+    @order.user_id = current_user.id
     if @order.save
       redirect_to orders_path
     else
-      render 'new'
+      redirect_to root_path, notice: @order.errors.full_messages.join(", ")
     end
   end
 

@@ -1,7 +1,7 @@
 -# = render 'form'
 = form_with(url: orders_path, method: "post") do |f|
 
-  %input{:type => "hidden", :value => "#{params[:book_id]}", name: "order[book_id]"}
+  %input{:type => "hidden", :value => "#{params[:book]}", name: "order[book_id]"}
   .field
     = f.label :name
     = f.text_field :name,  class: "form-control form-control-lg", name: "order[name]"
@@ -12,4 +12,4 @@
     = f.label :mobilenumber
     = f.text_field :mobilenumber, class: "form-control form-control-lg", name: "order[mobilenumber]"
   .field
-    = f.submit 'Submit', :class => 'class="btn btn-primary mb-2"'
+    = f.submit 'Submit', :class => 'btn btn-primary mb-2'
