@@ -1,8 +1,8 @@
 class User < ApplicationRecord
   # after_create :send_admin_mail
-  has_many :books
-  has_many :reviews
-  has_many :orders
+  has_many :books, dependent: :nullify 
+  has_many :reviews, dependent: :destroy
+  has_many :orders, dependent: :destroy
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
