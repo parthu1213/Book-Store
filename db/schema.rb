@@ -70,10 +70,6 @@ ActiveRecord::Schema.define(version: 2019_12_18_060015) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
     t.integer "category_id"
-    t.string "image_file_name"
-    t.string "image_content_type"
-    t.bigint "image_file_size"
-    t.datetime "image_updated_at"
     t.float "price"
   end
 
