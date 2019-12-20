@@ -67,12 +67,21 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'localhost:3000', from: 'admin@onlinebooks.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.delivery_method = :test
-  config.action_mailer.smtp_settings = {
-    user_name:      'kc1464534@gmail.com',
-    password:       'kc@12345',
-    address:       'smtp.gmail.com',
-    port:          '587',
-    authentication: 'plain',
-    enable_starttls_auto: true
+  # config.action_mailer.smtp_settings = {
+  #   user_name:      'kc1464534@gmail.com',
+  #   password:       'kc@12345',
+  #   address:       'smtp.gmail.com',
+  #   port:          '465',
+  #   authentication: 'plain',
+  #   enable_starttls_auto: true
+  # }
+  ActionMailer::Base.smtp_settings = {
+    :user_name => 'ronaksoft',
+    :password => 'Ronak@123456',
+    :domain => 'softices-books.herokuapp.com',
+    :address => 'smtp.sendgrid.net',
+    :port => 465,
+    :authentication => :plain,
+    :enable_starttls_auto => true
   }
 end
